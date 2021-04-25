@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color: #d8d7d7;
+  text-align: center;
+}
+
+body a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+body h3,
+body p {
+  font-size: 1.6rem;
+  width: 80%;
+  margin: auto;
+  padding: 2rem;
+}
+
+body .material-icons {
+  border: none;
+  width: 2rem;
+}
+
+header {
+  height: 27rem;
+  background-color: #691cb1;
+}
+
+header .logo-header {
+  background-color: #691cb1;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+header .logo-header h1 {
+  font-size: 2rem;
+}
+
+header .logo-header .btnHeader button {
+  border-radius: 0.5rem;
+  margin-left: 0.5rem;
+  color: #ffffff;
+  -webkit-transition: 0.3s background;
+  transition: 0.3s background;
+  background-color: transparent;
+  width: 10rem;
+  margin-top: 1.5rem;
+  padding: 0.2rem;
+}
+
+header .logo-header .btnHeader button:hover {
+  cursor: pointer;
+  background: #ffffff;
+  color: #ab7fd4;
+}
+
+.container {
+  margin-top: -15rem;
+}
+
+.container h3 {
+  font-weight: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container p {
+  text-align: justify;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.container .card {
+  border-radius: 0.5rem;
+  background: #ffffff;
+  margin: 2.5rem auto;
+  width: 90vw;
+  height: 15rem;
+}
+
+.container #cardTotal {
+  color: #ffffff;
+  background-color: #691cb1;
+}
+
+#newCrud .newTransaction {
+  margin: 0 0 1rem 4.5vw;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 600;
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#newCrud .newTransaction p {
+  color: #691cb1;
+  cursor: pointer;
+  margin: 0.7rem;
+  width: auto;
+}
+
+#newCrud .newTransaction span {
+  color: #691cb1;
+  width: 2rem;
+  cursor: pointer;
+}
+
+#newCrud #data-table {
+  background-color: #fcfcfc;
+  margin: 0 auto 10rem;
+  width: 90vw;
+  color: black;
+  border: 0.2rem solid black;
+}
+
+#newCrud #data-table .header-table th {
+  color: black;
+  border: 0.1rem solid black;
+}
+
+footer {
+  position: fixed;
+  background-color: #691cb1;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+
+@media (min-width: 700px) {
+  header {
+    height: 220px;
+  }
+  .container {
+    width: 700px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: -120px auto 0;
+  }
+  .container .card {
+    max-width: 225px;
+  }
+  .container .card p {
+    font-size: 20px;
+  }
+  .container #cardTotal {
+    background: chartreuse;
+  }
+  #newCrud #data-table,
+  #newCrud .newTransaction {
+    width: 690px;
+    margin: auto;
+    padding: 0;
+  }
+  footer p {
+    background: #691cb1;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  header {
+    height: 220px;
+  }
+  .container {
+    width: 890px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .container .card {
+    max-width: 280px;
+  }
+  .container .card p {
+    font-size: 25px;
+  }
+  .container #cardTotal {
+    background-color: #8448bd;
+  }
+  #newCrud #data-table,
+  #newCrud .newTransaction {
+    margin: auto;
+    padding: 0;
+    width: 870px;
+  }
+  footer p {
+    background: #691cb1;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=main.css.map */

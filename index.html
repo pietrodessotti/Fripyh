@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="rgb(130, 50, 180)">
+    <link rel="stylesheet" href="./styles/main/main.css">
+    <link rel="stylesheet" href="./styles/partials/forms.css">
+    <link rel="stylesheet" href="./styles/partials/popup.css">
+
+    <link rel="shortcut icon" href="./assets/fav.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Fripyh</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-header">
+            <h1><a href="./index.html">Fripyh</a></h1>
+            <div class="btnHeader">
+                <a href="./login.html"><button class="login">Login</button></a>
+                <a href="./newUser.html"> <button class="sing-up">Sing-up</button></a>
+            </div>
+        </div>
+    </header>
+
+    <div id="modalFinances">
+        <div id="infoFinances">
+            <h1>Bem-vindo (a) ao Fripyh, sua plataforma de Gestão Financeira.</h1>
+            <p>Lembre-se de fazer login para salvar suas transações financeiras!
+                <span class="material-icons">warning</span>
+            </p>
+            <button onClick="closeInfo()">Fechar</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h3>
+                <span>Entradas</span>
+                <img src="./assets/income.svg" alt="Imagem Entrada">
+            </h3>
+            <p>R$ 2.500,00</p>
+        </div>
+
+        <div class="card">
+            <h3>
+                <span>Saídas</span>
+                <img src="./assets/expense.svg" alt="Imagem Saidas">
+            </h3>
+            <p>R$ 1.000,00</p>
+        </div>
+        <div class="card" id="cardTotal">
+            <h3>
+                <span>Total</span>
+                <img src="./assets/total.svg" alt="Imagem Total">
+            </h3>
+            <p class="total">R$ 1.500,00</p>
+        </div>
+    </div>
+    
+    <div id="newCrud">
+        <div class="newTransaction">
+            <span onClick="addTransaction()" class="material-icons">add</span>
+            <p onClick="addTransaction()">Nova Transação</p>
+        </div>
+        <table id="data-table" class="table">
+            <thead class="header-table">
+                <tr class="border-total">
+                    <th class="font">Fonte</th>
+                    <th class="amount">Valor</th>
+                    <th class="date">Data</th>
+                    <th class="payment">Pagamento</th>
+                    <th class="actions" colspan="2">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="table-finances">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modalOverlay">
+        <div class="modal">
+            <div class="modalContent">
+                <div id="form">
+                    <h2>Nova Transação</h2>
+                    <form action="">
+                        <select name="newFinance" id="newFinance" class="font" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="0" disabled>Fontes de Renda: </option>
+                            <option value="1">Bico</option>
+                            <option value="2">Trabalho</option>
+                            <option value="3">Renda extra</option>
+
+                            <option value="4" disabled>Gastos: </option>
+                            <option value="5">Alguel</option>
+                            <option value="6">Água</option>
+                            <option value="7">Academia</option>
+                            <option value="8">Faculdade</option>
+                            <option value="9">Feira</option>
+                            <option value="10">Internet</option>
+                            <option value="11">Luz</option>
+                            <option value="12">Mercado</option>
+                            <option value="13">Médico</option>
+                            <option value="14">Plano de celular</option>
+                        </select>
+                        <input type="number" id="valor-gasto" placeholder="0,00" required></input>
+
+                        <input type="date" name="date" id="date">
+                        <select name="payment" id="payment" required>
+                            <option value="">Método de Pagamento</option>
+                            <option value="0">Crédito</option>
+                            <option value="1">Débito</option>
+                            <option value="2">Dinheiro</option>
+                        </select>
+                        <div class="buttons-form">
+                            <button id="btnCancel" onClick="cancelTransaction()">Cancelar</button>
+                            <button onClick="saveTransaction()" type="submit">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="grafics" onClick="grafics()">
+        <!-- <h1>oi</h1> -->
+    </div>
+
+    <footer>
+        <p>Sua plataforma de controle financeiro</p>
+    </footer>
+
+    <script src="./js/login.js"></script>
+    <script src="./js/grafics.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/infoFinances.js"></script>
+</body>
+
+</html>
