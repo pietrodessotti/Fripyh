@@ -123,6 +123,8 @@ header {
     }
 
     #data-table {
+        font-size: 1.6rem;
+        font-weight: 600;
         background-color: $dataTable;
         margin: 0 auto 10rem;
         width: 90vw;
@@ -132,6 +134,11 @@ header {
         .header-table th {
             color: black;
             border: 0.1rem solid black
+        }
+        
+        #table-finances tr {
+            color: $fontColor;
+            background-color: $headerColor;
         }
     }
 }

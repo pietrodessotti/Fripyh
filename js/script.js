@@ -1,11 +1,34 @@
-const tableFinance = {
+const saida1 = {
     font: "Mercado",
-    amount: 25,
+    amount: -650,
     date: "15/05/2021",
     payment: "Débito",
 }
 
-tableLine = [tableFinance]
+const entrada1 = {
+    font: "Trabalho",
+    amount: 1500,
+    date: "01/05/2021",
+    payment: "Dinheiro",
+}
+
+const saida2 = {
+    font: "Roupas",
+    amount: -350,
+    date: "22/04/2021",
+    payment: "Crédito",
+}
+
+const entrada2 = {
+    font: "Renda Extra",
+    amount: 1000,
+    date: "25/05/2021",
+    payment: "Débito",
+}
+
+
+
+tableLine = [entrada1, entrada2, saida1, saida2]
 
 newLineTable(tableLine)
 
@@ -13,7 +36,7 @@ function newLineTable(tableLine) {
     html = ""
     for (var i = 0; i < tableLine.length; i++) {
         html += "<tr><td>" + tableLine[i].font + "</td>"
-        html += "<td>" + tableLine[i].amount + "</td>"
+        html += "<td>R$ " + tableLine[i].amount + "</td>"
         html += "<td>" + tableLine[i].date + "</td>"
         html += "<td>" + tableLine[i].payment + "</td>"
 
@@ -25,6 +48,7 @@ function newLineTable(tableLine) {
     tableFinances.innerHTML = html
 }
 
+
 function removeTransaction(i) {
     const deleting = tableLine[i]
     tableLine.splice(i, 1)
@@ -34,7 +58,7 @@ function removeTransaction(i) {
 
 function editTransaction(i) {
     const editing = tableLine[i]
-    
+
     editing.font = prompt("digite o novo nome")
     editing.amount = parseFloat(prompt("digite o novo valor"))
     editing.payment = parseInt(prompt("1 credito 2 debito 3 dinheiro"))

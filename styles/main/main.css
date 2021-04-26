@@ -138,6 +138,8 @@ header .logo-header .btnHeader button:hover {
 }
 
 #newCrud #data-table {
+  font-size: 1.6rem;
+  font-weight: 600;
   background-color: #fcfcfc;
   margin: 0 auto 10rem;
   width: 90vw;
@@ -148,6 +150,11 @@ header .logo-header .btnHeader button:hover {
 #newCrud #data-table .header-table th {
   color: black;
   border: 0.1rem solid black;
+}
+
+#newCrud #data-table #table-finances tr {
+  color: #ffffff;
+  background-color: #691cb1;
 }
 
 footer {
