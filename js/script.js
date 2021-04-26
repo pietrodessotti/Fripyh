@@ -34,6 +34,7 @@ function removeTransaction(i) {
 
 function editTransaction(i) {
     const editing = tableLine[i]
+    
     editing.font = prompt("digite o novo nome")
     editing.amount = parseFloat(prompt("digite o novo valor"))
     editing.payment = parseInt(prompt("1 credito 2 debito 3 dinheiro"))

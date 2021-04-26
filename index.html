@@ -87,7 +87,7 @@
     <div class="modalOverlay">
         <div class="modal">
             <div class="modalContent">
-                <div id="form">
+                <div onsubmit="return enviar();" id="form" action="" method="POST">
                     <h2>Nova Transação</h2>
                     <form action="">
                         <select name="newFinance" id="newFinance" class="font" required>
@@ -109,7 +109,7 @@
                             <option value="13">Médico</option>
                             <option value="14">Plano de celular</option>
                         </select>
-                        <input type="number" id="valor-gasto" placeholder="0,00" required></input>
+                        <input type="number" id="amount" placeholder="0,00" required></input>
 
                         <input type="date" name="date" id="date">
                         <select name="payment" id="payment" required>
