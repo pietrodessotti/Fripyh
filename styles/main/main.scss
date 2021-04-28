@@ -49,194 +49,203 @@ header {
             font-size: 2rem;
         }
 
-        .btnHeader button {
-            border-radius: 0.5rem;
-            margin-left: 0.5rem;
-            color: $fontColor;
-            transition: 0.3s background;
-            background-color: transparent;
-            width: 10rem;
-            margin-top: 1.5rem;
-            padding: 0.2rem;
+        .btnHeader {
+            display: none;
+            
 
-            &:hover {
-                cursor: pointer;
-                background: $fontColor;
-                color: $btnHover;
+            img {
+                width: 50px;
+                border-radius: 50%;
+            }
+
+            button {
+                border-radius: 0.5rem;
+                margin-left: 0.5rem;
+                color: $fontColor;
+                transition: 0.3s background;
+                background-color: transparent;
+                width: 10rem;
+                margin-top: 1.5rem;
+                padding: 0.2rem;
+
+                &:hover {
+                    cursor: pointer;
+                    background: $fontColor;
+                    color: $btnHover;
+                }
             }
         }
     }
 }
+    .container {
+        margin-top: -15rem;
 
-.container {
-    margin-top: -15rem;
-
-    h3 {
-        font-weight: normal;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    p {
-        text-align: justify;
-        font-size: 3rem;
-        font-weight: 600;
-    }
-
-    .card {
-        border-radius: 0.5rem;
-        background: $fontColor;
-        margin: 2.5rem auto;
-        width: 90vw;
-        height: 15rem;
-    }
-
-    #cardTotal {
-        color: $fontColor;
-        background-color: $headerColor;
-    }
-}
-
-#newCrud {
-    .newTransaction {
-        margin: 0 0 1rem 4.5vw;
-        font-size: 2rem;
-        color: $fontColor;
-        font-weight: 600;
-        width: 90vw;
-        display: flex;
-        align-items: center;
+        h3 {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
         p {
-            color: $headerColor;
-            cursor: pointer;
-            margin: 0.7rem;
-            width: auto;
+            text-align: justify;
+            font-size: 3rem;
+            font-weight: 600;
         }
 
-        span {
-            color: $headerColor;
-            width: 2rem;
-            cursor: pointer;
+        .card {
+            border-radius: 0.5rem;
+            background: $fontColor;
+            margin: 2.5rem auto;
+            width: 90vw;
+            height: 15rem;
         }
-    }
 
-    #data-table {
-        font-size: 1.6rem;
-        font-weight: 600;
-        background-color: $dataTable;
-        margin: 0 auto 10rem;
-        width: 90vw;
-        color: black;
-        border: 0.2rem solid black;
-
-        .header-table th {
-            color: black;
-            border: 0.1rem solid black
-        }
-        
-        #table-finances tr {
+        #cardTotal {
             color: $fontColor;
             background-color: $headerColor;
         }
     }
-}
 
-footer {
-    position: fixed;
-    background-color: $headerColor;
-    bottom: 0;
-    width: 100%;
-
-    p {
-        font-size: 1rem;
-        color: $fontColor;
-        padding: 0.5rem;
-    }
-}
-
-@media (min-width: 700px) {
-
-    header {
-        height: 220px;
-    }
-
-    .container {
-        width: 700px;
-        display: flex;
-        margin: -120px auto 0;
-
-        .card {
-            max-width: 225px;
+    #newCrud {
+        .newTransaction {
+            margin: 0 0 1rem 4.5vw;
+            font-size: 2rem;
+            color: $fontColor;
+            font-weight: 600;
+            width: 90vw;
+            display: flex;
+            align-items: center;
 
             p {
-                font-size: 20px;
+                color: $headerColor;
+                cursor: pointer;
+                margin: 0.7rem;
+                width: auto;
+            }
+
+            span {
+                color: $headerColor;
+                width: 2rem;
+                cursor: pointer;
             }
         }
 
-        #cardTotal {
-            background: $cardTotalMedium;
+        #data-table {
+            font-size: 1.6rem;
+            font-weight: 600;
+            background-color: $dataTable;
+            margin: 0 auto 10rem;
+            width: 90vw;
+            color: black;
+            border: 0.2rem solid black;
+
+            .header-table th {
+                color: black;
+                border: 0.1rem solid black
+            }
+
+            #table-finances tr {
+                color: $fontColor;
+                background-color: $headerColor;
+            }
         }
     }
 
-    #newCrud {
-
-        #data-table,
-        .newTransaction {
-            width: 690px;
-            margin: auto;
-            padding: 0;
-        }
-    }
-
-    footer p {
-        background: $headerColor;
-        width: 100%;
+    footer {
         position: fixed;
+        background-color: $headerColor;
         bottom: 0;
-        margin: auto;
+        width: 100%;
+
+        p {
+            font-size: 1rem;
+            color: $fontColor;
+            padding: 0.5rem;
+        }
     }
-}
 
-@media (min-width: 900px) {
+    @media (min-width: 700px) {
 
-    header {
-        height: 220px;
-    }
+        header {
+            height: 220px;
+        }
 
-    .container {
-        width: 890px;
-        display: flex;
+        .container {
+            width: 700px;
+            display: flex;
+            margin: -120px auto 0;
 
-        .card {
-            max-width: 280px;
+            .card {
+                max-width: 225px;
 
-            p {
-                font-size: 25px;
+                p {
+                    font-size: 20px;
+                }
+            }
+
+            #cardTotal {
+                background: $cardTotalMedium;
             }
         }
 
-        #cardTotal {
-            background-color: $cardTotalLarge;
+        #newCrud {
+
+            #data-table,
+            .newTransaction {
+                width: 690px;
+                margin: auto;
+                padding: 0;
+            }
         }
-    }
 
-    #newCrud {
-
-        #data-table,
-        .newTransaction {
+        footer p {
+            background: $headerColor;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
             margin: auto;
-            padding: 0;
-            width: 870px;
         }
     }
 
-    footer p {
-        background: $headerColor;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        margin: auto;
+    @media (min-width: 900px) {
+
+        header {
+            height: 220px;
+        }
+
+        .container {
+            width: 890px;
+            display: flex;
+
+            .card {
+                max-width: 280px;
+
+                p {
+                    font-size: 25px;
+                }
+            }
+
+            #cardTotal {
+                background-color: $cardTotalLarge;
+            }
+        }
+
+        #newCrud {
+
+            #data-table,
+            .newTransaction {
+                margin: auto;
+                padding: 0;
+                width: 870px;
+            }
+        }
+
+        footer p {
+            background: $headerColor;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            margin: auto;
+        }
     }
-}

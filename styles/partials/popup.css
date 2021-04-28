@@ -63,6 +63,7 @@
     border-radius: 2rem;
   }
   #modalFinances #infoFinances h1 {
+    font-size: 15pt;
     padding: 3.5rem 2.5rem;
   }
   #modalFinances #infoFinances p {

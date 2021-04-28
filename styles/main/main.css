@@ -56,6 +56,15 @@ header .logo-header h1 {
   font-size: 2rem;
 }
 
+header .logo-header .btnHeader {
+  display: none;
+}
+
+header .logo-header .btnHeader img {
+  width: 50px;
+  border-radius: 50%;
+}
+
 header .logo-header .btnHeader button {
   border-radius: 0.5rem;
   margin-left: 0.5rem;

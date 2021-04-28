@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="./styles/partials/forms.css">
     <link rel="stylesheet" href="./styles/partials/login.css">
     <link rel="shortcut icon" href="./png-transparent-computer-icons-f-eacute-e-purple-angle-text.png">
+    <link rel="shortcut icon" href="./assets/fav.png">
 
+    <script src="./js/login.js"></script>
     <title>Fripyh</title>
 </head>
 
@@ -25,11 +27,12 @@
         <!-- <h1>Sua plataforma de Gestão financeira</h1> -->
 
         <div class="cardLogin">
+
             <div class="cardPerfil">
                 <img src="./assets/avatarMasc.jpg" alt="">
             </div>
-            <input type="text" placeholder="Usuário">
-            <input type="password" maxlength="8" placeholder="Senha">
+            <input type="text" placeholder="Usuário" id="email" required>
+            <input type="password" maxlength="8" placeholder="Senha" id="password" required>
 
             <div class="links">
                 <input type="checkbox" name="Lembrar">
@@ -37,9 +40,8 @@
 
                 <a href="#">Esqueci minha senha</a>
             </div>
-
             <div class="btn">
-                <button class="btnLogin" onClick="btnLogin()">Login</button>
+                <button class="btnLogin" onClick="logInto()">Login</button>
                 <a href="./newUser.html">Fazer cadastro</a>
             </div>
            
@@ -68,7 +70,6 @@
         <p>Sua plataforma de controle financeiro</p>
     </footer>
 
-    <script src="./js/login.js"></script>
 </body>
 
 </html>

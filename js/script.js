@@ -26,8 +26,6 @@ const entrada2 = {
     payment: "Débito",
 }
 
-
-
 tableLine = [entrada1, entrada2, saida1, saida2]
 
 newLineTable(tableLine)
@@ -48,6 +46,36 @@ function newLineTable(tableLine) {
     tableFinances.innerHTML = html
 }
 
+function saveTransaction() {
+    var font = document.getElementById("font");
+    var amount = document.getElementById("amount");
+    var date = document.getElementById("date");
+    var payment = document.getElementById("payment");
+
+    var data = JSON.parse(localStorage.getItem("dataNewFinance"));
+
+    if(data == null) {
+        localStorage.setItem("dataNewFinance", "[]");
+        data = [];
+    }
+
+    var newFinance = {
+        font: font.value,
+        amount: amount.value,
+        date: date.value,
+        payment: payment.value,
+    }
+
+    data.push(newFinance);
+    cancelTransaction()
+
+    localStorage.setItem("dataNewFinance", JSON.stringify(data));
+
+    font.value = "";
+    amount.value = "";
+    date.value = "";
+    payment.value = "";
+}
 
 function removeTransaction(i) {
     const deleting = tableLine[i]

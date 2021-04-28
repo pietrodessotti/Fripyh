@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles/partials/forms.css">
     <link rel="stylesheet" href="./styles/partials/login.css">
     <link rel="shortcut icon" href="./png-transparent-computer-icons-f-eacute-e-purple-angle-text.png">
+    <link rel="shortcut icon" href="./assets/fav.png">
 
     <title>Fripyh</title>
 </head>
@@ -28,44 +29,27 @@
             <div class="cardPerfil">
                 <img src="./assets/avatarMasc.jpg" alt="">
             </div>
-            <input type="text" maxlength="16" placeholder="Nome">
-            <input type="text" maxlength="12" placeholder="Usuário">
-            <input type="text" placeholder="E-mail">
+            <input type="text" maxlength="16" placeholder="Nome" id="newName">
+            <input type="text" maxlength="12" placeholder="Usuário" id="newUser">
+            <input type="email" placeholder="E-mail" id="newEmail">
+            <input type="email" placeholder="Confirme o e-mail" id="confirmEmail">
 
-            <input type="password" maxlength="8" placeholder="Senha">
+            <input type="password" maxlength="8" placeholder="Senha" id="newPassword">
             <div class="links">
             </div>
             <div class="btn">
-                <button class="btnLogin" onClick="btnLogin()">Fazer cadastro</button>
+                <button class="btnLogin" onClick="register()">Fazer cadastro</button>
                 <a href="./login.html">Já tenho uma conta</a>
             </div>
-               
+
         </div>
     </div>
-
-    <div class="modalOverlay">
-        <div class="modal">
-            <div class="modalContent">
-                <form action="">
-                    <div class="buttons-form">
-                        <button id="btnCancel" onClick="cancelTransaction()">Cancelar</button>
-                        <button onClick="saveTransaction()" type="submit">Salvar</button>
-
-                    </div>
-                </form>
-
-
-            </div>
-        </div>
-    </div>
-
-
 
     <footer>
         <p>Sua plataforma de controle financeiro</p>
     </footer>
 
-    <script src="./js/login.js"></script>
+    <script src="./js/newUser.js"></script>
 </body>
 
 </html>
