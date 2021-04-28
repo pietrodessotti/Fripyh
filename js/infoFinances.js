@@ -10,11 +10,11 @@ if (localStorage.getItem("acesso") == "true") {
 
 if (logado != true) {
     function closeInfo() {
-        window.location.href = "../login.html"
+        window.location.href = "./login.html"
     }
 
     function signUp() {
-        window.location.href = "../newUser.html"
+        window.location.href = "./newUser.html"
     }
 }
 
