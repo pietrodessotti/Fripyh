@@ -7,7 +7,7 @@ function logInto() {
     if (email.value == "admin" && password.value == "admin") {
         localStorage.setItem("acesso", true);
 
-        window.location.href = "../index.html";
+        window.location.href = "./index.html";
 
     } else if (email.value === "" && password.value === "") {
         alert("Você precisa digitar seu e-mail e senha")
