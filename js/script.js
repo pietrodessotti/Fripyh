@@ -71,22 +71,6 @@ function editTransaction(i) {
     newLineTable(tableLine)
 }
 
-// function saveTransaction(i) {
-//     const save = tableLine[i]
-
-//     tableLine.push({
-//         font: prompt("Digite o local"),
-//         amount: parseFloat(prompt("Quanto gastou ou recebeu")),
-//         date: prompt("Data"),
-//         payment: prompt("Digite 1 para Crédito | 2 para Débito | 3 para Dinheiro"),
-//     })
-
-//     newLineTable(tableLine)
-//     closeModal();
-
-// }
-
-
 function addTransaction() {
     document.querySelector('.modalOverlay').classList.add('active')
 }
@@ -94,81 +78,3 @@ function addTransaction() {
 function cancelTransaction() {
     document.querySelector('.modalOverlay').classList.remove('active')
 }
-
-// const Form = {
-//     font: document.querySelector('select.font'),
-//     amount: document.querySelector('input.value'),
-//     date: document.querySelector('input.date'),
-//     payment: document.querySelector('select.payment'),
-
-//     getValues() {
-//         return {
-//             font: Form.font.value,
-//             amount: Form.amount.value,
-//             date: Form.date.value,
-//             payment: Form.payment.value
-//         }
-//     },
-
-//     validadeFields() {
-//         const {
-//             font,
-//             amount,
-//             date,
-//             payment
-//         } = Form.getValues()
-
-//         if (font.trim() === "" ||
-//             amount.trim() === "" ||
-//             date.trim() === "" ||
-//             payment.trim() === "") {
-//             throw new Error("Por favor, preencha todos os campos")
-//         }
-//     },
-
-//     formatValues() {
-//         let {
-//             font,
-//             amount,
-//             date,
-//             payment
-//         } = Form.getValues()
-
-//         amount = Utils.formatAmount(amount)
-
-//         date = Utils.formatDate(date)
-
-
-//         return {
-//             font,
-//             amount,
-//             date,
-//             payment
-//         }
-//     },
-
-//     clearFields() {
-//         Form.font.value = "",
-//         Form.amount.value = "",
-//         Form.date.value = "",
-//         Form.payment.value = ""
-//     },
-
-//     submit(event) {
-//         event.preventDefault()
-
-//         try {
-//             Form.validadeFields()
-
-//             const transaction = Form.formatValues()
-
-//             addTransaction.add(transaction)
-
-//             Form.clearFields()
-
-//             closeModal();
-//         } catch (error) {
-//             alert(error.message)
-//         }
-//     }
-// }
