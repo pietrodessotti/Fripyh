@@ -5,12 +5,6 @@ function register() {
     var confirmEmail = document.getElementById("confirmEmail")
     var newPassword = document.getElementById("newPassword");
 
-    if(newEmail != confirmEmail) {
-        alert("Os emails são diferentes")
-    } else {
-
-    }
-
     var data = JSON.parse(localStorage.getItem("dataNewUser"));
 
     if (data == null) {
@@ -24,18 +18,24 @@ function register() {
         email: newEmail.value,
         confirmEmail: confirmEmail.value,
         newPassword: newPassword.value,
-
     }
 
-    data.push(newRegister);
+    if (newName.value == "" || newUser.value == "" || newEmail.value == "" || confirmEmail.value == "" || newPassword.value == "") {
+        alert("Por favor, preencha todos os campos!")
 
-    localStorage.setItem("dataNewUser", JSON.stringify(data));
-    alert("Registro concluído");
+    } else if (newEmail.value != confirmEmail.value) {
+        alert("Os e-mails devem ser iguais!")
+        
+    } else {
+        data.push(newRegister);
 
-    newName.value = "";
-    newUser.value = "";
-    newEmail.value = "";
-    confirmEmail.value = "";
-    newPassword.value = "";
+        localStorage.setItem("dataNewUser", JSON.stringify(data));
+        alert("Registro concluído");
+
+        newName.value = "";
+        newUser.value = "";
+        newEmail.value = "";
+        confirmEmail.value = "";
+        newPassword.value = "";
+    }
 }
-
