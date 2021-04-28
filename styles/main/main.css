@@ -62,7 +62,7 @@ header .logo-header .btnHeader {
   display: flex;
 }
 
-header .logo-header .btnHeader img {
+header .logo-header .btnHeader a img {
   width: 50px;
   border-radius: 50%;
 }
