@@ -18,7 +18,6 @@ if (logado != true) {
     }
 }
 
-
 function getOut() {
     localStorage.clear()
 }

@@ -9,8 +9,6 @@ function logInto() {
 
         window.location.href = "../index.html";
 
-        document.getElementById("btnHeader").style.display = "flex";
-
     } else if (email.value === "" && password.value === "") {
         alert("Você precisa digitar seu e-mail e senha")
     } else if (email.value == "") {

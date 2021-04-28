@@ -57,7 +57,9 @@ header .logo-header h1 {
 }
 
 header .logo-header .btnHeader {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 header .logo-header .btnHeader img {
