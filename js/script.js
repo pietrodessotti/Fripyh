@@ -75,6 +75,16 @@ function saveTransaction() {
     amount.value = "";
     date.value = "";
     payment.value = "";
+    
+    tableLine.push({
+        font: newFinance.font,
+        amount: newFinance.amount,
+        date: newFinance.date,
+        payment: newFinance.payment,
+    })
+    
+    newLineTable(tableLine)
+    localStorage.clear()
 }
 
 function removeTransaction(i) {
