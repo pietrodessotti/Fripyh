@@ -1,28 +1,28 @@
 const saida1 = {
     font: "Mercado",
     amount: -650,
-    date: "15/05/2021",
+    date: "15-05-2021",
     payment: "Débito",
 }
 
 const entrada1 = {
     font: "Trabalho",
     amount: 1500,
-    date: "01/05/2021",
+    date: "01-05-2021",
     payment: "Dinheiro",
 }
 
 const saida2 = {
     font: "Roupas",
     amount: -350,
-    date: "22/04/2021",
+    date: "22-04-2021",
     payment: "Crédito",
 }
 
 const entrada2 = {
     font: "Renda Extra",
     amount: 1000,
-    date: "25/05/2021",
+    date: "25-05-2021",
     payment: "Débito",
 }
 
