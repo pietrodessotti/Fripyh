@@ -1,29 +1,29 @@
 const saida1 = {
     font: "Mercado",
     amount: -650,
-    date: "15-05-2021",
+    date: "2021-05-15",
     payment: "Débito",
 }
 
 const entrada1 = {
     font: "Trabalho",
     amount: 1500,
-    date: "01-05-2021",
+    date: "2021-05-01",
     payment: "Dinheiro",
 }
 
 const saida2 = {
     font: "Roupas",
     amount: -350,
-    date: "22-04-2021",
+    date: "2021-04-22",
     payment: "Crédito",
 }
 
 const entrada2 = {
     font: "Renda Extra",
     amount: 1000,
-    date: "25-05-2021",
-    payment: "Débito",
+    date: "2021-05-25",
+    payment: "Depósito",
 }
 
 tableLine = [entrada1, entrada2, saida1, saida2]
