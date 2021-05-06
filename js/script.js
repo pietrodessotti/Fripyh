@@ -1,29 +1,29 @@
 const saida1 = {
     font: "Mercado",
     amount: -650,
-    date: "2021-05-15",
+    date: "15/05/2021",
     payment: "Débito",
 }
 
 const entrada1 = {
     font: "Trabalho",
     amount: 1500,
-    date: "2021-05-01",
+    date: "01/05/2021",
     payment: "Dinheiro",
 }
 
 const saida2 = {
     font: "Roupas",
     amount: -350,
-    date: "2021-04-22",
+    date: "22/04/2021",
     payment: "Crédito",
 }
 
 const entrada2 = {
     font: "Renda Extra",
     amount: 1000,
-    date: "2021-05-25",
-    payment: "Depósito",
+    date: "25/05/2021",
+    payment: "Débito",
 }
 
 tableLine = [entrada1, entrada2, saida1, saida2]
@@ -54,7 +54,7 @@ function saveTransaction() {
 
     var data = JSON.parse(localStorage.getItem("dataNewFinance"));
 
-    if(data == null) {
+    if (data == null) {
         localStorage.setItem("dataNewFinance", "[]");
         data = [];
     }
@@ -67,25 +67,68 @@ function saveTransaction() {
     }
 
     data.push(newFinance);
-    cancelTransaction()
-
-    localStorage.setItem("dataNewFinance", JSON.stringify(data));
+    closeModal()
 
     font.value = "";
     amount.value = "";
     date.value = "";
     payment.value = "";
-    
+    localStorage.setItem("dataNewFinance", JSON.stringify(data));
+
+    cardScore = newFinance.amount.replace(",", ".");
+
+    for (i = 0; i < newFinance.amount; i++) {
+        var total = newFinance.amount[i];
+
+        cardSub = "<p>" + total + "</p>"
+
+    }
+    var cards = document.querySelector(".cardIncome")
+    cards.innerHTML = cardSub
+
     tableLine.push({
         font: newFinance.font,
         amount: newFinance.amount,
         date: newFinance.date,
         payment: newFinance.payment,
     })
-    
+
     newLineTable(tableLine)
     localStorage.clear()
 }
+
+function containerCard() {
+    var sum = 0;
+    var sub = 0;
+    var total = 0;
+
+    for (i = 0; i < tableLine.length; i++) {
+        if (tableLine[i].amount > 0) {
+            sum += tableLine[i].amount;
+
+        } else if (tableLine[i].amount < 0) {
+            sub -= tableLine[i].amount;
+        }
+        total = sum - sub;
+    }
+
+    cardIncome = "<p style='color: green'>R$ " + sum + "</p>"
+
+    var card = document.querySelector(".cardIncome");
+    card.innerHTML = cardIncome
+
+    cardExpense = "<p style='color: rgb(182, 9, 9)'>R$ " + sub + "</p>"
+
+    var card = document.querySelector(".cardExpense");
+    card.innerHTML = cardExpense
+
+    cardTotal = "<p>R$ " + total + "</p>"
+
+    var card = document.querySelector(".cardTotal");
+    card.innerHTML = cardTotal
+}
+
+containerCard()
 
 function removeTransaction(i) {
     const deleting = tableLine[i]
@@ -113,6 +156,6 @@ function addTransaction() {
     document.querySelector('.modalOverlay').classList.add('active')
 }
 
-function cancelTransaction() {
+function closeModal() {
     document.querySelector('.modalOverlay').classList.remove('active')
 }
