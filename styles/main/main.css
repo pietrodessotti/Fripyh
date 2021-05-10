@@ -109,11 +109,28 @@ header .logo-header .btnHeader button:hover {
 }
 
 .container .card {
+  position: relative;
   border-radius: 0.5rem;
   background: #ffffff;
   margin: 2.5rem auto;
   width: 90vw;
   height: 15rem;
+}
+
+.container .card .content {
+  z-index: 10;
+  position: relative;
+}
+
+.container .card span {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  z-index: 2;
 }
 
 .container #cardTotal {
@@ -151,21 +168,19 @@ header .logo-header .btnHeader button:hover {
 #newCrud #data-table {
   font-size: 1.6rem;
   font-weight: 600;
-  background-color: #fcfcfc;
+  background: linear-gradient(45deg, #ff0058, #03a9f4);
   margin: 0 auto 10rem;
   width: 90vw;
   color: black;
-  border: 0.2rem solid black;
+  border-radius: 0.5rem;
 }
 
 #newCrud #data-table .header-table th {
-  color: black;
-  border: 0.1rem solid black;
+  color: #1b0c0c;
 }
 
 #newCrud #data-table #table-finances tr {
   color: #ffffff;
-  background-color: #691cb1;
 }
 
 footer {
@@ -193,27 +208,79 @@ footer p {
     margin: -120px auto 0;
   }
   .container .card {
+    position: relative;
     max-width: 225px;
   }
   .container .card p {
     font-size: 20px;
   }
-  .container #cardTotal {
+  .container .card .content {
+    position: relative;
+    z-index: 10;
+  }
+  .container .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: -webkit-gradient(linear, left top, right top, from(#691cb1), to(#d8d7d7));
+    background: linear-gradient(90deg, #691cb1, #d8d7d7);
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+  }
+  .container .card::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(#691cb1), to(#d8d7d7));
+    background: linear-gradient(90deg, #691cb1, #d8d7d7);
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+    -webkit-filter: blur(30px);
+            filter: blur(30px);
+  }
+  .container .card span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #691cb1, #d8d7d7);
+    opacity: 1;
+    z-index: 2;
+  }
+  .container .card span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+  #cardTotal {
     background: chartreuse;
   }
-  #newCrud #data-table,
-  #newCrud .newTransaction {
-    width: 690px;
-    margin: auto;
-    padding: 0;
-  }
-  footer p {
-    background: #691cb1;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    margin: auto;
-  }
+}
+
+#newCrud #data-table,
+#newCrud .newTransaction {
+  width: 690px;
+  margin: auto;
+  padding: 0;
+}
+
+footer p {
+  background: #691cb1;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin: auto;
 }
 
 @media (min-width: 900px) {
@@ -227,12 +294,79 @@ footer p {
     display: flex;
   }
   .container .card {
+    border-radius: 5px;
+    position: relative;
     max-width: 280px;
   }
   .container .card p {
     font-size: 25px;
   }
-  .container #cardTotal {
+  .container .card .content {
+    position: relative;
+    z-index: 10;
+  }
+  .container .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(#691cb1), to(#d8d7d7));
+    background: linear-gradient(90deg, #691cb1, #d8d7d7);
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+  }
+  .container .card::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(#691cb1), to(#d8d7d7));
+    background: linear-gradient(90deg, #691cb1, #d8d7d7);
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+    -webkit-filter: blur(30px);
+            filter: blur(30px);
+  }
+  .container .card span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border-radius: 5px;
+    background: -webkit-gradient(linear, left top, left bottom, from(white));
+    background: linear-gradient(white);
+    opacity: 1;
+    z-index: 2;
+  }
+  .container .card span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(white));
+    background: linear-gradient(white);
+    opacity: 0.5;
+    border-radius: 5px;
+    pointer-events: none;
+  }
+  .container #cardTotal span {
+    background: -webkit-gradient(linear, left top, left bottom, from(#691cb1));
+    background: linear-gradient(#691cb1);
+  }
+  .container #cardTotal span::before {
+    background: -webkit-gradient(linear, left top, left bottom, from(#691cb1));
+    background: linear-gradient(#691cb1);
+  }
+  .container .card:nth-child(3)::before,
+  .container .card:nth-child(3)::after {
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+  }
+  #cardTotal {
     background-color: #8448bd;
   }
   #newCrud #data-table,

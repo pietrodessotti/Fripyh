@@ -54,7 +54,7 @@ function saveTransaction() {
 
     var data = JSON.parse(localStorage.getItem("dataNewFinance"));
 
-    if(data == null) {
+    if (data == null) {
         localStorage.setItem("dataNewFinance", "[]");
         data = [];
     }
@@ -69,12 +69,23 @@ function saveTransaction() {
     data.push(newFinance);
     cancelTransaction()
 
-    localStorage.setItem("dataNewFinance", JSON.stringify(data));
-
     font.value = "";
     amount.value = "";
     date.value = "";
     payment.value = "";
+    localStorage.setItem("dataNewFinance", JSON.stringify(data));
+
+
+
+    tableLine.push({
+        font: newFinance.font,
+        amount: newFinance.amount,
+        date: newFinance.date,
+        payment: newFinance.payment,
+    })
+
+    newLineTable(tableLine)
+    localStorage.clear()
 }
 
 function removeTransaction(i) {
