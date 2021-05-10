@@ -78,14 +78,14 @@ function saveTransaction() {
 
     cardScore = newFinance.amount.replace(",", ".");
 
-    for (i = 0; i < newFinance.amount; i++) {
-        var total = newFinance.amount[i];
+    // for (i = 0; i < newFinance.amount; i++) {
+    //     var total = newFinance.amount[i];
 
-        cardSub = "<p>" + total + "</p>"
+    //     cardSub = "<p>" + total + "</p>"
 
-    }
-    var cards = document.querySelector(".cardIncome")
-    cards.innerHTML = cardSub
+    // }
+    // var cards = document.querySelector(".cardIncome")
+    // cards.innerHTML = cardSub
 
     tableLine.push({
         font: newFinance.font,
@@ -104,11 +104,11 @@ function containerCard() {
     var total = 0;
 
     for (i = 0; i < tableLine.length; i++) {
-        if (tableLine[i].amount > 0) {
-            sum += tableLine[i].amount;
+        if (newFinance.amount > 0) {
+            sum += newFinance.amount;
 
-        } else if (tableLine[i].amount < 0) {
-            sub -= tableLine[i].amount;
+        } else if (newFinance.amount < 0) {
+            sub -= newFinance.amount;
         }
         total = sum - sub;
     }

@@ -126,7 +126,7 @@ header {
 }
 
 #newCrud {
- 
+
     .newTransaction {
         margin: 0 0 1rem 4.5vw;
         font-size: 2rem;
@@ -162,6 +162,10 @@ header {
 
         .header-table th {
             color: rgb(27, 12, 12);
+        }
+
+        .material-icons {
+            cursor: pointer;
         }
 
         #table-finances tr {
@@ -367,7 +371,7 @@ footer p {
         #cardTotal span {
             background: linear-gradient($headerColor);
         }
-        
+
         #cardTotal span::before {
             background: linear-gradient($headerColor);
         }

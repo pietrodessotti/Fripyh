@@ -179,6 +179,10 @@ header .logo-header .btnHeader button:hover {
   color: #1b0c0c;
 }
 
+#newCrud #data-table .material-icons {
+  cursor: pointer;
+}
+
 #newCrud #data-table #table-finances tr {
   color: #ffffff;
 }
