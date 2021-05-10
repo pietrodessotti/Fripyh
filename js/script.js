@@ -67,7 +67,6 @@ function saveTransaction() {
     }
 
     data.push(newFinance);
-    cancelTransaction()
     closeModal()
 
     font.value = "";
