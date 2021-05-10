@@ -25,12 +25,6 @@
                 <a href="./login.html"><img src="./assets/avatarMasc.jpg"></a>
                 <a href="./index.html"> <button onClick="getOut()" class="sing-up">Sair</button></a>
             </div>
-
-
-            <!-- <div class="btnHeader">
-                <a href="./login.html"><button class="login">Login</button></a>
-                <a href="./newUser.html"> <button class="sing-up">Sing-up</button></a>
-            </div> -->
         </div>
     </header>
 
@@ -44,14 +38,6 @@
                 <button onClick="closeInfo()">Entrar</button>
                 <button onClick="signUp()">Criar conta</button>
             </div>
-
-            <!-- <div id="infoFinances">
-                <h1>Bem-vindo (a) ao Fripyh, sua plataforma de Gestão Financeira.</h1>
-                <p>Lembre-se de fazer login para salvar suas transações financeiras!
-                    <span class="material-icons">warning</span>
-                </p>
-                <button onClick="closeInfo()">Fechar</button>
-            </div> -->
         </div>
     </nav>
 
@@ -120,6 +106,25 @@
                     <select name="newFinance" id="font" class="font" required>
                         <option value="">Selecione uma opção</option>
                         <option value="0" disabled>Fontes de Renda: </option>
+                        <option value="Bico">Bico</option>
+                        <option value="Trabalho">Trabalho</option>
+                        <option value="Renda extra">Renda extra</option>
+
+                        <option value="4" disabled>Gastos: </option>
+                        <option value="Aluguel">Alguel</option>
+                        <option value="Água">Água</option>
+                        <option value="Academia">Academia</option>
+                        <option value="Faculdade">Faculdade</option>
+                        <option value="Feira">Feira</option>
+                        <option value="Internet">Internet</option>
+                        <option value="Luz">Luz</option>
+                        <option value="Mercado">Mercado</option>
+                        <option value="Médico">Médico</option>
+                        <option value="Plano de celular">Plano de celular</option>
+                    </select>
+                    <!-- <select name="newFinance" id="font" class="font" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="0" disabled>Fontes de Renda: </option>
                         <option value="1">Bico</option>
                         <option value="2">Trabalho</option>
                         <option value="3">Renda extra</option>
@@ -135,16 +140,23 @@
                         <option value="12">Mercado</option>
                         <option value="13">Médico</option>
                         <option value="14">Plano de celular</option>
-                    </select>
+                    </select> -->
                     <input type="number" id="amount" placeholder="0,00" required></input>
 
                     <input type="date" name="date" id="date">
                     <select name="payment" id="payment" required>
                         <option value="">Método de Pagamento</option>
+                        <option value="Crédito">Crédito</option>
+                        <option value="Débito">Débito</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                        <option value="Depósito">Depósito</option>
+                    </select>
+                    <!-- <select name="payment" id="payment" required>
+                        <option value="">Método de Pagamento</option>
                         <option value="0">Crédito</option>
                         <option value="1">Débito</option>
                         <option value="2">Dinheiro</option>
-                    </select>
+                    </select> -->
                     <div class="buttons-form">
                         <button id="btnCancel" onClick="cancelTransaction()">Cancelar</button>
                         <button onClick="saveTransaction()" type="submit">Salvar</button>

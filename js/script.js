@@ -68,6 +68,7 @@ function saveTransaction() {
 
     data.push(newFinance);
     cancelTransaction()
+    closeModal()
 
     font.value = "";
     amount.value = "";
@@ -76,6 +77,16 @@ function saveTransaction() {
     localStorage.setItem("dataNewFinance", JSON.stringify(data));
 
 
+    cardScore = newFinance.amount.replace(",", ".");
+
+    for (i = 0; i < newFinance.amount; i++) {
+        var total = newFinance.amount[i];
+
+        cardSub = "<p>" + total + "</p>"
+
+    }
+    var cards = document.querySelector(".cardIncome")
+    cards.innerHTML = cardSub
 
     tableLine.push({
         font: newFinance.font,
@@ -87,6 +98,39 @@ function saveTransaction() {
     newLineTable(tableLine)
     localStorage.clear()
 }
+
+function containerCard() {
+    var sum = 0;
+    var sub = 0;
+    var total = 0;
+
+    for (i = 0; i < tableLine.length; i++) {
+        if (tableLine[i].amount > 0) {
+            sum += tableLine[i].amount;
+
+        } else if (tableLine[i].amount < 0) {
+            sub -= tableLine[i].amount;
+        }
+        total = sum - sub;
+    }
+
+    cardIncome = "<p style='color: green'>R$ " + sum + "</p>"
+
+    var card = document.querySelector(".cardIncome");
+    card.innerHTML = cardIncome
+
+    cardExpense = "<p style='color: rgb(182, 9, 9)'>R$ " + sub + "</p>"
+
+    var card = document.querySelector(".cardExpense");
+    card.innerHTML = cardExpense
+
+    cardTotal = "<p>R$ " + total + "</p>"
+
+    var card = document.querySelector(".cardTotal");
+    card.innerHTML = cardTotal
+}
+
+containerCard()
 
 function removeTransaction(i) {
     const deleting = tableLine[i]
@@ -114,6 +158,6 @@ function addTransaction() {
     document.querySelector('.modalOverlay').classList.add('active')
 }
 
-function cancelTransaction() {
+function closeModal() {
     document.querySelector('.modalOverlay').classList.remove('active')
 }
